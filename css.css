@@ -1,0 +1,548 @@
+:root {
+  --background-atras: rgb(60, 78, 77);
+  --cor-principal: rgb(119, 133, 239);
+  --skills-bg: cadetblue;
+  --card-bg: rgba(60, 78, 77, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Habilita a rolagem suave para todo o documento */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Previne scroll horizontal indesejado */
+  background: var(--background-atras);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca a camada atrás de todo o conteúdo */
+  opacity: 0.8;
+  background-color: #188743;
+  opacity: 0.8;
+  background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px),
+    radial-gradient(#ffffff 0.5px, #188743 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.main-header.scrolled {
+  background-color: rgb(39, 45, 50);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--cor-principal);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa a altura total da tela */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Garante que nada vaze */
+}
+
+.img-spg {
+  width: 20%;
+}
+
+.img-eu {
+  max-width: 450px; /* Limita o tamanho da imagem */
+  max-height: 80vh;
+  object-fit: contain; /* Garante que a imagem caiba na tela sem distorcer */
+}
+
+.about-me {
+  padding: 0px 20px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.about-me h3 {
+  font-weight: lighter;
+}
+
+.about-me span {
+  color: #ffffff;
+  font-size: large;
+  font-weight: 600;
+  padding: 2px;
+  background-color: #000000;
+}
+
+.separators-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+/* SEPARADORES ESTILIZADOS */
+.imagens-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 200px;
+  transform: rotate(5deg);
+  align-items: center;
+  width: 110%;
+  background-color: var(--cor-principal);
+  z-index: 2;
+}
+.imagens-container-back {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 200px;
+  transform: rotate(-5deg);
+  align-items: center;
+  width: 110%;
+  background-color: rgb(79, 85, 126);
+  z-index: 1;
+}
+
+.content {
+  overflow: hidden;
+  padding: 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  text-align: center; /* Mantido para o h1 e p */
+  position: relative; /* Mantido para contexto de z-index */
+  margin-top: 0;
+  border-radius: 50px 50px 0px 0px;
+  background-color: rgb(39, 45, 50);
+  z-index: 3;
+}
+
+.sep {
+  margin-top: 40px;
+  height: 15px;
+}
+
+/* SKILLS */
+.habilidades {
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px; /* Compensa o padding esquerdo do .content */
+  margin-right: -40px; /* Compensa o padding direito do .content */
+  width: calc(100% + 80px); /* Preenche a largura total do .content */
+  box-sizing: border-box; /* Garante que padding/border sejam incluídos na largura */
+  padding: 40px 0; /* Padding vertical para a seção */
+  background-color: var(--skills-bg);
+}
+.container-skills {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* --- NOVO GRÁFICO DE HABILIDADES (CSS PURO) --- */
+.skills-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skills-list li {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills-list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--level, 0%);
+  background-color: var(--cor-principal);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.skills-list .skill-name,
+.skills-list .skill-level,
+.skills-list i {
+  position: relative; /* Garante que o texto fique acima da barra */
+  z-index: 1;
+  color: #fff;
+}
+
+.skills-list i {
+  font-size: 1.8rem;
+}
+
+.skills-list .skill-level {
+  margin-left: auto; /* Empurra o nível para a direita */
+  opacity: 0.7;
+}
+
+.oficinas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px; /* Espaço acima da seção */
+}
+
+.oficinas-cont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+  gap: 15px;
+}
+
+.oficina-local {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: center; /* Centraliza o span no card */
+}
+
+.projetos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  position: relative;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 300px;
+  margin: 10px;
+  padding: 10px;
+  height: 380px; /* Define uma altura fixa para os cards */
+  padding-top: 40px; /* Espaço para o status */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-link {
+  display: block; /* Garante que o link se comporte como um bloco */
+  flex: 0 0 320px; /* Define a base do flex para o wrapper do card */
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-status {
+  position: relative;
+  margin-bottom: 15px; /* Espaço entre o status e os ícones */
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #fff;
+  align-self: center; /* Centraliza o status no card */
+}
+
+.card-status.released {
+  background-color: #28a745; /* Verde */
+}
+
+.card-status.in-development {
+  background-color: #fd7e14; /* Laranja */
+}
+
+.card p {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.img-card {
+  height: 250px; /* Define uma altura para a área da imagem */
+  margin: 10px 0;
+
+  border-radius: 5px;
+  overflow: hidden; /* Garante que a imagem não vaze para fora */
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Faz a imagem caber na área, mantendo a proporção */
+}
+
+.card-techs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.card-techs i {
+  opacity: 0.8;
+}
+
+.projetos-cont {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 400px;
+}
+
+/* --- ESTILIZAÇÃO DA BARRA DE ROLAGEM DO CARROSSEL --- */
+.projetos-cont::-webkit-scrollbar {
+  height: 10px; /* Altura da barra de rolagem */
+}
+
+.projetos-cont::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Fundo da barra */
+  border-radius: 10px;
+}
+
+.projetos-cont::-webkit-scrollbar-thumb {
+  background-color: var(--cor-principal); /* Cor do marcador de rolagem */
+  border-radius: 10px;
+}
+
+.projetos-cont::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(140, 153, 255); /* Cor ao passar o mouse */
+}
+
+/* --- SEÇÃO DE CONTATO --- */
+#contato {
+  background-color: var(--background-atras);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#contato h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.grid-contatos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.grid-contatos a {
+  color: #fff;
+  font-size: 4rem; /* Tamanho dos ícones */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.grid-contatos a:hover {
+  transform: scale(1.2) rotate(10deg);
+  color: var(--cor-principal);
+}
+
+/* Ícone do Itch.io (se estiver usando FontAwesome) */
+.fa-itch-io {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+/* --- MEDIA QUERIES PARA DESKTOP --- */
+@media (min-width: 768px) {
+  /* Ajusta a imagem principal para não ficar tão grande */
+  .img-eu {
+    width: 450px;
+  }
+
+  /* Centraliza o conteúdo principal e limita sua largura */
+  .content {
+    max-width: 1200px;
+    /* Mantém a margem do topo e centraliza horizontalmente */
+    margin: 0px auto 0;
+  }
+
+  .content p {
+    max-width: 600px; /* Melhora a legibilidade do parágrafo */
+  }
+
+  /* Ajusta os separadores angulares */
+  .imagens-container,
+  .imagens-container-back {
+    top: 50px;
+  }
+
+  /* Ajusta a seção de habilidades */
+  .habilidades {
+    /* Margens e largura já ajustadas para preencher o .content */
+    /* Apenas ajusta o padding interno do container-skills para desktop */
+    margin-left: -40px; /* Garante que a cor de fundo preencha o .content */
+    margin-right: -40px;
+  }
+
+  .container-skills {
+    gap: 30px; /* Adiciona um espaço entre os ícones e o gráfico */
+  }
+
+  .icone {
+    font-size: 40px; /* Aumenta um pouco os ícones */
+  }
+
+  .chart li {
+    font-size: 18px; /* Aumenta a fonte do gráfico */
+  }
+
+  /* Ajusta a seção de projetos */
+  .projetos {
+    width: 100%; /* Remove a largura excessiva */
+  }
+}
+
+/* --- RESPONSIVIDADE DA NAVEGAÇÃO --- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px; /* Altura da navbar */
+    flex-direction: column;
+    background-color: rgb(39, 45, 50);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    gap: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* --- ANIMAÇÕES ON SCROLL --- */
+/* Estado inicial dos elementos a serem animados */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado final (quando o elemento está visível) */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ativa a animação do gráfico quando a seção de habilidades fica visível */
+.habilidades.is-visible .skills-list li::before {
+  transform: scaleX(1);
+}

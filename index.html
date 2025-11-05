@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artu.gd</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Adiciona a biblioteca Font Awesome para o ícone do Itch.io -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#" class="nav-logo">Meu Portfólio</a>
+            <ul class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="bg">
+        <img class="img-eu" src="statics/artu.png" alt="">
+        <div class="about-me">
+            <h1>QUEM EU SOU?</h1>
+            <h2>
+                Desenvolvedor Nortista apaixonado por criar soluções interativas. Minha jornada transita entre o
+                <span>desenvolvimento de jogos</span>, a <span>análise de dados</span> e a <span>ilustração</span>,
+                unindo a lógica
+                da
+                programação
+                com a
+                criatividade da arte para construir projetos únicos e extrair insights valiosos.
+            </h2>
+        </div>
+    </div>
+    <div class="content" id="sobre">
+        <div class="sep"></div>
+        <section class="habilidades animate-on-scroll" id="habilidades">
+            <h1>HABILIDADES</h1>
+            <div class="container-skills">
+                <ul class="skills-list">
+                    <!-- O nível da habilidade é definido em style="--level: X%;" -->
+                    <li style="--level: 90%;">
+                        <i class="devicon-godot-plain"></i>
+                        <span class="skill-name">Godot</span>
+                        <span class="skill-level">Avançado</span>
+                    </li>
+                    <li style="--level: 70%;">
+                        <i class="devicon-javascript-plain"></i>
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-level">Intermediário</span>
+                    </li>
+                    <li style="--level: 70%;">
+                        <i class="devicon-python-plain"></i>
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">Intermediário</span>
+                    </li>
+                    <li style="--level: 40%;">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            id="devicon Gamemaker--Streamline-Simple-Icons" height="24" width="24" style="
+                            z-index: 2;
+                        ">
+                            <path
+                                d="M0.012 11.994 12.006 0l11.982 12.006h-6.831l-5.163 -5.151 -5.151 5.151 5.163 5.151v-5.151h5.151v6.903L12.006 24z"
+                                fill="#fff" stroke-width="1"></path>
+                        </svg>
+                        <span class="skill-name">GameMaker</span>
+                        <span class="skill-level">Mediano</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="sep"></div>
+
+        <section class="projetos" id="projetos">
+            <h1>PROJETOS</h1>
+            <div class="projetos-cont">
+
+                <a href="https://sapogamesofc.itch.io/banzeiro" target="_blank" class="card-link animate-on-scroll">
+                    <div class="card">
+                        <h3>Banzeiro</h3>
+                        <div class="img-card">
+                            <img src="statics/banzeiro.png" alt="">
+                        </div>
+                        <p>Jogo ganhador da gamejam da semana gamedev da UFOPA para ensinar sobre os nossos rios
+                            e sua biodiversidade e como ela vem sendo
+                            ameaçada por nossas ações</p>
+                        <div class="card-techs">
+                            <i class="devicon-godot-plain"></i>
+                        </div>
+                        <div class="card-status released">Lançado</div>
+                    </div>
+                </a>
+
+                <a class="card-link animate-on-scroll">
+                    <div class="card">
+                        <h3>GeoBot</h3>
+                        <div class="img-card">
+                            <img src="statics/geobot.png" alt="">
+                        </div>
+                        <p>Jogo plataforma feito com intuito de ensinar geofísica de forma mais lúdica para projeto de
+                            extensão e ações em escolas de ensino fundamental e médio</p>
+                        <div class="card-techs">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                id="devicon Gamemaker--Streamline-Simple-Icons" height="24" width="24">
+                                <path
+                                    d="M0.012 11.994 12.006 0l11.982 12.006h-6.831l-5.163 -5.151 -5.151 5.151 5.163 5.151v-5.151h5.151v6.903L12.006 24z"
+                                    fill="#fff" stroke-width="1"></path>
+                            </svg>
+                        </div>
+                        <div class="card-status in-development">Em Desenvolvimento</div>
+                    </div>
+                </a>
+
+                <a class="card-link animate-on-scroll">
+                    <div class="card">
+                        <h3>Pront+</h3>
+                        <div class="img-card">
+
+                        </div>
+                        <p>Projeto de gestão de prontuários feito durante disciplina de programação web</p>
+                        <div class="card-techs">
+                            <i class="devicon-nextjs-original"></i>
+                            <i class="devicon-php-plain"></i>
+                            <i class="devicon-mysql-plain"></i>
+                        </div>
+                        <div class="card-status in-development">Em Desenvolvimento</div>
+                    </div>
+                </a>
+
+                <div class="card-link animate-on-scroll">
+                    <div class="card">
+                        <h3>Painel Inteligente</h3>
+                        <div class="img-card"></div>
+                        <p>Projeto de análise de dados feito para meu projeto de iniciação científica para controle
+                            de
+                            dados relacionados à produção de mandioca na região de Juruti</p>
+                        <div class="card-techs">
+                            <i class="devicon-python-plain"></i>
+                            <i class="devicon-javascript-plain"></i>
+                        </div>
+                        <div class="card-status in-development">Em Desenvolvimento</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="oficinas animate-on-scroll" id="oficinas">
+            <h1>OFICINAS</h1>
+            <div class="oficinas-cont">
+                <div class="card">
+                    <h3>Oficina de Godot</h3>
+                    <div class="card-techs">
+                        <i class="devicon-godot-plain"></i>
+                    </div>
+                    <p>Ministrei uma oficina de introdução ao desenvolvimento de jogos com Godot Engine, realizada
+                        durante a Semana
+                        Gamedev da UFOPA.</p>
+                    <span class="oficina-local">Semana Gamedev</span>
+                </div>
+                <div class="card">
+                    <h3>Oficina de Blender</h3>
+                    <div class="card-techs">
+                        <i class="devicon-blender-original"></i>
+                    </div>
+                    <p>Oficina de introdução à modelagem 3D com Blender para estudantes do ensino médio na Escola
+                        Tecnológica do Pará.</p>
+                    <span class="oficina-local">EETEPA</span>
+                </div>
+                <div class="card">
+                    <h3>Oficina de Blender</h3>
+                    <div class="card-techs">
+                        <i class="devicon-blender-original"></i>
+                    </div>
+                    <p>Oficina de modelagem 3D para a comunidade acadêmica durante o Festival Latino-americano de
+                        Instalação de Software Livre.</p>
+                    <span class="oficina-local">FLISOL</span>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <footer id="contato">
+        <h2 class="animate-on-scroll">ENTRE EM CONTATO</h2>
+        <div class="grid-contatos ">
+            <a href="https://github.com/artunicore" target="_blank" title="GitHub" class="animate-on-scroll"><i
+                    class="devicon-github-original"></i></a>
+            <a href="https://www.linkedin.com/in/flávio-arthur-campos-figueira-310513244" target="_blank"
+                title="LinkedIn"><i class="devicon-linkedin-plain"></i></a>
+            <a href="https://artunicore.itch.io/" target="_blank" title="Itch.io"><i
+                    class="fa-brands fa-itch-io"></i></a>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
