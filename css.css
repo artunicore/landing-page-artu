@@ -108,7 +108,7 @@ body::before {
   width: 100%;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Garante que nada vaze */
+  position: relative; /* Garante o fluxo correto do documento */
 }
 
 .img-spg {
@@ -182,7 +182,6 @@ body::before {
   align-items: center;
   text-align: center; /* Mantido para o h1 e p */
   position: relative; /* Mantido para contexto de z-index */
-  margin-top: 0;
   border-radius: 50px 50px 0px 0px;
   background-color: rgb(39, 45, 50);
   z-index: 3;
@@ -273,6 +272,7 @@ body::before {
 .oficinas-cont {
   display: flex;
   justify-content: center;
+  align-items: flex-start; /* Alinha os cards ao topo */
   flex-wrap: wrap; /* Permite que os cards quebrem a linha */
   gap: 15px;
 }
@@ -285,6 +285,12 @@ body::before {
   font-size: 0.8rem;
   font-weight: bold;
   align-self: center; /* Centraliza o span no card */
+}
+
+.oficina-card {
+  height: auto; /* Permite que a altura se ajuste ao conteúdo */
+  padding-top: 10px; /* Remove o padding-top extra que era para o status */
+  padding-bottom: 20px; /* Garante um respiro na parte inferior */
 }
 
 .projetos {
@@ -300,7 +306,7 @@ body::before {
   flex-direction: column;
   flex: 0 0 300px;
   margin: 10px;
-  padding: 10px;
+  padding: 10px; /* Mantém o padding geral */
   height: 380px; /* Define uma altura fixa para os cards */
   padding-top: 40px; /* Espaço para o status */
   text-align: center;
@@ -341,13 +347,10 @@ body::before {
 }
 
 .card p {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   word-wrap: break-word;
   white-space: normal;
+  padding: 10px; /* Adiciona um respiro interno para todos os parágrafos dos cards */
 }
 
 .img-card {
@@ -525,6 +528,13 @@ body::before {
   .nav-menu li {
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .bg {
+    height: auto; /* Remove a altura fixa em telas menores */
+    padding-top: 100px; /* Adiciona espaço no topo para a navbar */
+    padding-bottom: 40px; /* Adiciona um respiro na parte inferior */
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
   }
 }
 
