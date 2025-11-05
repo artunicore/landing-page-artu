@@ -119,6 +119,7 @@ body::before {
 .img-eu {
   max-width: 450px; /* Limita o tamanho da imagem */
   max-height: 80vh;
+  width: 90%; /* Garante que a imagem encolha em telas menores */
   object-fit: contain; /* Garante que a imagem caiba na tela sem distorcer */
 }
 
@@ -548,6 +549,13 @@ body::before {
     padding-top: 100px; /* Adiciona espaço no topo para a navbar */
     padding-bottom: 40px; /* Adiciona um respiro na parte inferior */
     justify-content: flex-start; /* Alinha o conteúdo ao topo */
+  }
+
+  /* Ajusta a seção de habilidades para não vazar na lateral */
+  .habilidades {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
