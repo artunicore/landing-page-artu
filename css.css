@@ -293,6 +293,18 @@ body::before {
   padding-bottom: 20px; /* Garante um respiro na parte inferior */
 }
 
+.oficina-p a {
+  color: var(--cor-principal);
+  font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado padrão */
+  transition: color 0.3s ease;
+}
+
+.oficina-p a:hover {
+  color: rgb(140, 153, 255); /* Um tom um pouco mais claro no hover */
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
 .projetos {
   width: 100%;
   display: flex;
