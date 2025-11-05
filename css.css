@@ -107,6 +107,7 @@ body::before {
   height: 100vh; /* Ocupa a altura total da tela */
   width: 100%;
   justify-content: center;
+  overflow: hidden;
   align-items: center;
   position: relative; /* Garante o fluxo correto do documento */
 }
